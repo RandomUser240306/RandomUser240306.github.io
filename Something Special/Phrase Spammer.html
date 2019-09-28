@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function run (e) {
+phraseSpammmer(this.form)
+}
+function phraseSpammmer (form) {
+    var x = form.wordBox.value;
+    var y = form.numberBox.value;
+	document.getElementById("spam").innerHTML = (x + " ").repeat(y);
+}
+var wage = document.getElementById("wordBox");
+wage.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        run(e);
+    }
+});
+
+
+</script>
+<style>
+#spam {
+font-family: sans-serif;
+color: #0d0;
+}
+body {
+background: black;
+}
+form {
+font-family: sans-serif;
+color: #0d0;
+}
+input[type=text], [type=number], [type=button] {
+margin: 10px 0px 0px 0px;
+background: #00d;
+border: 2px solid #00d;
+color: white;
+}
+::placeholder {
+color: white;
+}
+</style>
+</head>
+<body>
+<p id="spam">Hi</p>
+<FORM NAME="myform" ACTION="" METHOD="GET">
+<input type="text" name="wordBox" id="wordBox" placeholder="Type in a word" value=><p>
+<input type="number" name="numberBox" placeholder="How many times do you want to repeat this word?" value="">
+<INPUT TYPE="button" NAME="button" Value="Click" onClick="phraseSpammmer(this.form)">
+</FORm>
+
+</body>
+</html>

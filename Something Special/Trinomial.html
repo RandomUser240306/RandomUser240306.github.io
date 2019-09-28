@@ -1,0 +1,22 @@
+<head>
+
+</head>
+<body>
+<script>
+var a = prompt(a);
+var b = prompt(b);
+var c = prompt(c);
+var answer1 = (-1 * b + Math.sqrt(b * b - (4 * a * c))) / (2 * a) / 2;
+var answer2 = (-1 * b - Math.sqrt(b * b - (4 * a * c))) / (2 * a) / 2;
+if (answer1 == NaN || answer2 == NaN) {
+document.write("Answer is a complex number");
+}
+if (answer1 == answer2) {
+document.write(answer1)
+}
+else {
+document.write(answer1);
+document.write(answer2);
+}
+</script>
+</body>

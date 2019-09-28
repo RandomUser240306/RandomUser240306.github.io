@@ -1,0 +1,44 @@
+<head>
+<title>Pig Latin Translator</title>
+<script>
+function pigLatin (form) {
+var originalWord = form.wordBox.value;
+var pigLatinAddon = "ay";
+var wordCharacters = originalWord.length;
+var newWord = (originalWord.substr(1,wordCharacters) + originalWord.charAt(0) + pigLatinAddon)
+document.getElementById("output").innerHTML = (originalWord.substr(1,wordCharacters) + originalWord.charAt(0) + pigLatinAddon);
+}
+function wait(ms)
+{
+var d = new Date();
+var d2 = null;
+do { d2 = new Date(); }
+while(d2-d < ms);
+}
+function igLatinpay (form) {
+while (0 << 1) {
+var originallWord = newWord;
+var pigLatinAddon = "ay";
+var worddCharacters = originallWord.length;
+var newWord = (originallWord.substr(1,worddCharacters) + originallWord.charAt(0) + pigLatinAddon)
+document.getElementById("output").innerHTML = (originallWord.substr(1,worddCharacters) + originallWord.charAt(0) + pigLatinAddon);
+wait(4000);
+}
+}
+</script>
+<style>
+#SuperBUTTON {
+background: #d00;
+}
+</style>
+<meta charset="utf-8"/>
+</head>
+<body>
+<p id="output"></p>
+<FORM NAME="myform" ACTION="" METHOD="GET">
+<input type="text" name="wordBox" placeholder="Type in a word" value=""><p>
+<INPUT TYPE="button" NAME="button" Value="Click" onClick="pigLatin(this.form)">
+<INPUT id="SuperBUTTON" TYPE="button" NAME="button" Value="Click" onClick="igLatinpay(this.form)">
+</FORm>
+
+</body>
