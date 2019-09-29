@@ -1,3 +1,5 @@
-var x= prompt("Enter a word")
+function bubbleStuff (form) {
+var x= form.wordbox.value;
 drawName(x);
 bounceBubbles();
+}
