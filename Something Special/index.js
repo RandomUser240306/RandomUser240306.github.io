@@ -1,5 +1,5 @@
 function bubbleStuff (form) {
-var x= form.wordbox.value;
+var x= form.stuffBox.value;
 drawName(x);
 bounceBubbles();
 }
