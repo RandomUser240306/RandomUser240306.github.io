@@ -13,6 +13,11 @@ if (programName == "Phrase Spammer") {
 if (programName == "Quadratic Equation Solver") {
 	quadraticFormulaSetup();
 }
+var clearButton = document.createElement("BUTTON");
+btn.innerHTML = "Click to clear";
+btn.setAttribute("name","button");
+btn.setAttribute("type","button");
+btn.setAttribute("onclick","clear()");
 }
 function pigLatinSetup() {
   var form = document.createElement("form");
@@ -121,6 +126,9 @@ document.getElementById("output").innerHTML = (answer1);
 else {
 document.getElementById("output").innerHTML = (answer1 + "," + answer2);
 }
+}
+function clear() {
+  form.remove
 }
 </script>
 </script>
