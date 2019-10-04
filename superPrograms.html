@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function test() {
+var programName = document.getElementById("Hi").value;
+if (programName == "Pig Latin Translator") {
+  pigLatinSetup();
+}
+if (programName == "Phrase Spammer") {
+  phraseSpammerSetup();
+}
+if (programName == "Quadratic Equation Solver") {
+	quadraticFormulaSetup();
+}
+}
+function pigLatinSetup() {
+  var form = document.createElement("form");
+  form.setAttribute("id","myForm");
+  form.setAttribute("name","myform");
+  form.setAttribute("action","");
+  form.setAttribute("method","get");
+  document.body.appendChild(form);
+  var input = document.createElement("INPUT");
+  input.setAttribute("type","text");
+  input.setAttribute("name","wordBox");
+  input.setAttribute("placeholder","Type in a word");
+  input.setAttribute("value","");
+  document.getElementById("myForm").appendChild(input);
+  var btn = document.createElement("BUTTON");
+  btn.innerHTML = "Click";
+  btn.setAttribute("name","button");
+  btn.setAttribute("type","button");
+  btn.setAttribute("onclick","pigLatin(this.form)");
+  document.getElementById("myForm").appendChild(btn);
+}
+function phraseSpammerSetup() {
+  var form = document.createElement("form");
+  form.setAttribute("id","myForm");
+  form.setAttribute("name","myform");
+  form.setAttribute("action","");
+  form.setAttribute("method","get");
+  document.body.appendChild(form);
+  var input = document.createElement("INPUT");
+  input.setAttribute("type","text");
+  input.setAttribute("name","wordBox");
+  input.setAttribute("placeholder","Type in a word");
+  input.setAttribute("value","");
+  document.getElementById("myForm").appendChild(input);
+  var br = document.createElement("br");
+  document.getElementById("myForm").appendChild(br);
+  var input2 = document.createElement("INPUT");
+  input2.setAttribute("type","number");
+  input2.setAttribute("name","numberBox");
+  input2.setAttribute("placeholder","How many times do you want to repeat this word?");
+  input2.setAttribute("value","");
+  document.getElementById("myForm").appendChild(input2);
+  var btn = document.createElement("BUTTON");
+  btn.innerHTML = "Click";
+  btn.setAttribute("name","button");
+  btn.setAttribute("type","button");
+  btn.setAttribute("onclick","phraseSpammmer(this.form)");
+  document.getElementById("myForm").appendChild(btn);
+}
+function quadraticFormulaSetup() {
+  var form = document.createElement("form");
+  form.setAttribute("id","myForm");
+  form.setAttribute("name","myform");
+  form.setAttribute("action","");
+  form.setAttribute("method","get");
+  document.body.appendChild(form);
+  var inputA = document.createElement("INPUT");
+  inputA.setAttribute("type","number");
+  inputA.setAttribute("name","A");
+  inputA.setAttribute("placeholder","A");
+  inputA.setAttribute("value","");
+  document.getElementById("myForm").appendChild(inputA);
+  var inputB = document.createElement("INPUT");
+  inputB.setAttribute("type","number");
+  inputB.setAttribute("name","B");
+  inputB.setAttribute("placeholder","B");
+  inputB.setAttribute("value","");
+  document.getElementById("myForm").appendChild(inputB);
+  var inputC = document.createElement("INPUT");
+  inputC.setAttribute("type","number");
+  inputC.setAttribute("name","C");
+  inputC.setAttribute("placeholder","C");
+  inputC.setAttribute("value","");
+  document.getElementById("myForm").appendChild(inputC);
+  var btn = document.createElement("BUTTON");
+  btn.innerHTML = "Click";
+  btn.setAttribute("name","button");
+  btn.setAttribute("type","button");
+  btn.setAttribute("onclick","quadraticFormula(this.form)");
+  document.getElementById("myForm").appendChild(btn);
+}
+function phraseSpammmer (form) {
+    var x = form.wordBox.value;
+    var y = form.numberBox.value;
+	document.getElementById("output").innerHTML = (x + " ").repeat(y);
+}
+function pigLatin (form) {
+var originalWord = form.wordBox.value;
+var pigLatinAddon = "ay";
+var wordCharacters = originalWord.length;
+var newWord = (originalWord.substr(1,wordCharacters) + originalWord.charAt(0) + pigLatinAddon);
+document.getElementById("output").innerHTML = (originalWord.substr(1,wordCharacters) + originalWord.charAt(0) + pigLatinAddon);
+}
+function quadraticFormula (form) {
+var a = form.A.value;
+var b = form.B.value;
+var c = form.C.value;
+var answer1 = (-1 * b + Math.sqrt(b * b - (4 * a * c))) / (2 * a);
+var answer2 = (-1 * b - Math.sqrt(b * b - (4 * a * c))) / (2 * a);
+if (answer1 == NaN || answer2 == NaN) {
+document.getElementById("output").innerHTML = ("Answer is a complex number");
+}
+if (answer1 == answer2) {
+document.getElementById("output").innerHTML = (answer1);
+}
+else {
+document.getElementById("output").innerHTML = (answer1 + "," + answer2);
+}
+}
+</script>
+</script>
+</head>
+<body>
+<form>
+  <select onChange="test()" id="Hi">
+    <option>Select a program</option>
+    <option>Pig Latin Translator</option>
+	<option>Phrase Spammer</option>
+	<option>Quadratic Equation Solver</option>
+  </select>
+</form>
+<p id="output"></p>
+
+</body>
+</html>
