@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+firstNumber = 0;
+secondNumber = 0;
+thirdNumber = 0;
+fourthNumber = 0;
+fifthNumber = 0;
+function pascaline(x) {
+if (x == 1) {
+firstNumber = firstNumber + 1;
+document.getElementById("box1").innerHTML = firstNumber;
+}
+if (x == 2) {
+secondNumber = secondNumber + 1;
+document.getElementById("box2").innerHTML = secondNumber;
+}
+if (x == 3) {
+thirdNumber = thirdNumber + 1;
+document.getElementById("box3").innerHTML = thirdNumber;
+}
+if (x == 4) {
+fourthNumber = fourthNumber + 1;
+document.getElementById("box4").innerHTML = fourthNumber;
+}
+if (x == 5) {
+fifthNumber = fifthNumber + 1;
+document.getElementById("box5").innerHTML = fifthNumber;
+}
+if (x == 6) {
+firstNumber = firstNumber - 1;
+document.getElementById("box1").innerHTML = firstNumber;
+}
+if (x == 7) {
+secondNumber = secondNumber - 1;
+document.getElementById("box2").innerHTML = secondNumber;
+}
+if (x == 8) {
+thirdNumber = thirdNumber - 1;
+document.getElementById("box3").innerHTML = thirdNumber;
+}
+if (x == 9) {
+fourthNumber = fourthNumber - 1;
+document.getElementById("box4").innerHTML = fourthNumber;
+}
+if (x == 10) {
+fifthNumber = fifthNumber - 1;
+document.getElementById("box5").innerHTML = fifthNumber;
+}
+for (i=0;i<10;i++) {
+if (secondNumber == 10) {
+firstNumber = firstNumber + 1;
+document.getElementById("box1").innerHTML = firstNumber;
+secondNumber = 0;
+document.getElementById("box2").innerHTML = secondNumber;
+}
+if (thirdNumber == 10) {
+secondNumber = secondNumber + 1;
+document.getElementById("box2").innerHTML = secondNumber;
+thirdNumber = 0;
+document.getElementById("box3").innerHTML = thirdNumber;
+}
+if (fourthNumber == 10) {
+thirdNumber = thirdNumber + 1;
+document.getElementById("box3").innerHTML = thirdNumber;
+fourthNumber = 0;
+document.getElementById("box4").innerHTML = fourthNumber;
+}
+if (fifthNumber == 10) {
+fourthNumber = fourthNumber + 1;
+document.getElementById("box4").innerHTML = fourthNumber;
+fifthNumber = 0;
+document.getElementById("box5").innerHTML = fifthNumber;
+}
+}
+}
+</script>
+<style>
+br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 0; /* change this to whatever height you want it */
+}
+td {
+	padding-right: 15px;
+}
+</style>
+</head>
+<body>
+<form>
+<input type="button" id="input1up" value="&uarr;" onClick="pascaline(1)">
+<input type="button" id="input2up" value="&uarr;" onClick="pascaline(2)">
+<input type="button" id="input3up" value="&uarr;" onClick="pascaline(3)">
+<input type="button" id="input4up" value="&uarr;" onClick="pascaline(4)">
+<input type="button" id="input5up" value="&uarr;" onClick="pascaline(5)">
+<br></br>
+<table>
+<tr>
+<td><p id="box1">0</p></td>
+<td><p id="box2">0</p></td>
+<td><p id="box3">0</p></td>
+<td><p id="box4">0</p></td>
+<td><p id="box5">0</p></td>
+</tr>
+</table>
+<br></br>
+<input type="button" id="input1down" value="&darr;" onClick="pascaline(6)">
+<input type="button" id="input2down" value="&darr;" onClick="pascaline(7)">
+<input type="button" id="input3down" value="&darr;" onClick="pascaline(8)">
+<input type="button" id="input4down" value="&darr;" onClick="pascaline(9)">
+<input type="button" id="input5down" value="&darr;" onClick="pascaline(10)">
+</form>
+</body>
+</html>

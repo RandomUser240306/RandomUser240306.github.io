@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+function button(x) {
+document.getElementById(x).style.backgroundColor = "red";
+}
+function buttons(x) {
+for (var i=0;i<document.getElementsByName(x).length;i++) {
+document.getElementsByName(x)[i].style.backgroundColor="blue";
+}
+}
+</script>
+</head>
+
+<body>
+<table>
+<tr id="0">
+<td>
+<INPUT TYPE="button" NAME="0" Value="0" onClick="buttons(0)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="1" onClick="buttons(1.1)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="2" onClick="buttons(1.2)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="3" onClick="buttons(1.3)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="4" onClick="buttons(1.4)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="5" onClick="buttons(1.5)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="6" onClick="buttons(1.6)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="7" onClick="buttons(1.7)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="8" onClick="buttons(1.8)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="9" onClick="buttons(1.9)">
+</td>
+
+</tr>
+<tr id="1">
+<td>
+<INPUT id="1.0" TYPE="button" NAME="1.0" Value="1" onClick="button(1)">
+</td>
+<td>
+<INPUT id="1.1" TYPE="button" NAME="1.1" Value="0/1" onClick="button(1.1)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="0/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="0/3" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="0/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="0/5" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="0/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="0/7" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="0/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="0/9" onClick="buttons(x)">
+</td>
+</tr>
+<tr id="2">
+<td>
+<INPUT TYPE="button" NAME="1.0" Value="2" onClick="button(2)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="0/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="0/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="0/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="0/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="1/0" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="1/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="1/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="1/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="1/8" onClick="buttons(x)">
+</td>
+</tr>
+<tr id="3">
+<td>
+<INPUT TYPE="button" NAME="1.0" Value="3" onClick="button(3)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="0/3" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="0/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="0/9" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="1/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="1/5" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="1/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="2/1" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="2/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="2/7" onClick="buttons(x)">
+</td>
+</tr>
+<tr id="4">
+<td>
+<INPUT TYPE="button" NAME="1.0" Value="4" onClick="button(4)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="0/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="0/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="1/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="1/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="2/0" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="2/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="2/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="3/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="3/6" onClick="buttons(x)">
+</td>
+</tr>
+<tr id="5">
+<td>
+<INPUT TYPE="button" NAME="1.0" Value="5" onClick="button(5)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="0/5" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="1/0" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="1/5" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="2/0" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="2/5" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="3/0" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="3/5" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="4/0" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="4/5" onClick="buttons(x)">
+</td>
+</tr>
+<tr id="6">
+<td>
+<INPUT TYPE="button" NAME="1.0" Value="6" onClick="button(6)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="0/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="1/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="1/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="2/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="3/0" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="3/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="4/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="4/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="5/4" onClick="buttons(x)">
+</td>
+</tr>
+<tr id="7">
+<td>
+<INPUT TYPE="button" NAME="1.0" Value="7" onClick="button(7)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="0/7" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="1/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="2/1" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="2/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="3/5" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="4/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="4/9" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="5/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="6/3" onClick="buttons(x)">
+</td>
+</tr>
+<tr id="8">
+<td>
+<INPUT TYPE="button" NAME="1.0" Value="8" onClick="button(8)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="0/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="1/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="2/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="3/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="4/0" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="4/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="5/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="6/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="7/2" onClick="buttons(x)">
+</td>
+</tr>
+<tr id="9">
+<td>
+<INPUT TYPE="button" NAME="1.0" Value="9" onClick="button(9)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.1" Value="0/9" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.2" Value="1/8" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.3" Value="2/7" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.4" Value="3/6" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.5" Value="4/5" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.6" Value="5/4" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.7" Value="6/3" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.8" Value="7/2" onClick="buttons(x)">
+</td>
+<td>
+<INPUT TYPE="button" NAME="1.9" Value="8/1" onClick="buttons(x)">
+</td>
+</tr>
+</table>
+</body>
