@@ -13,7 +13,10 @@ if (programName == "Phrase Spammer") {
 if (programName == "Quadratic Equation Solver") {
 	quadraticFormulaSetup();
 }
-var clearButton = document.createElement("BUTTON");
+if (programName == "Radical Simplifier") {
+	simplifySetup();
+}
+	var clearButton = document.createElement("BUTTON");
 clearButton.innerHTML = "Click to clear";
 clearButton.setAttribute("name","button");
 clearButton.setAttribute("type","button");
@@ -100,6 +103,46 @@ function quadraticFormulaSetup() {
   btn.setAttribute("onclick","quadraticFormula(this.form)");
   document.getElementById("myForm").appendChild(btn);
 }
+      function simplifySetup() {
+          var form = document.createElement("form");
+  form.setAttribute("id","myForm");
+  form.setAttribute("name","myform");
+  form.setAttribute("action","");
+  form.setAttribute("method","get");
+  form.setAttribute("onSubmit","simplify(this.form)")
+  document.body.appendChild(form);
+  var inputa = document.createElement("INPUT");
+  inputa.setAttribute("type","number");
+  inputa.setAttribute("name","a");
+  inputa.setAttribute("placeholder","a");
+  inputa.setAttribute("value","");
+  document.getElementById("myForm").appendChild(inputa);
+  var btn = document.createElement("BUTTON");
+  btn.innerHTML = "Click";
+  btn.setAttribute("name","simplifyButton");
+  btn.setAttribute("type","button");
+  btn.setAttribute("onclick","simplify(this.form)");
+  document.getElementById("myForm").appendChild(btn);
+      }
+      function simplify(form) {
+        var aa = form.a.value
+        var bb = 2;
+        var cc = 1;
+        var dd = 1;
+        var ee = Math.sqrt(aa);
+        while (ee>=bb) {
+          var cc = aa / Math.pow(bb,2);
+          
+          if (cc == Math.trunc(cc)) {
+            var aa = cc;
+          }
+          if (aa/Math.pow(bb,2)!=Math.trunc(aa/Math.pow(bb,2))) {
+            bb++;
+          }
+        }
+        dd = Math.round(Math.sqrt(Math.pow(ee,2) / aa))
+        document.getElementById("output").innerHTML = dd + "&#8730;" + aa;
+      }
 function phraseSpammmer (form) {
     var x = form.wordBox.value;
     var y = form.numberBox.value;
@@ -141,6 +184,7 @@ function clear() {
     <option>Pig Latin Translator</option>
 	<option>Phrase Spammer</option>
 	<option>Quadratic Equation Solver</option>
+	  <option>Radical Simplifier</option>
   </select>
 </form>
 <p id="output"></p>
