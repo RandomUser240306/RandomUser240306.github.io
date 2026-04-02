@@ -1,47 +1,314 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>My Website</title>
-  <style>
-    body {
-      text-align: center;
-      background: black;
-      background-size: cover;
-      background-position: center;
-      color: white;
-      font-family: helvetica;
-    }
-    ul {
-      font-size: 22px;
-	  font-family: serif;
-	  color: white;
-	  list-style-position: inside;
-	  }
-	  a {
-	  color: white
-    }
-    input {
-      border: 0;
-      padding: 10px;
-      font-size: 18px;
-    }
-    input[type="submit"] {
-      background: blue;
-      color: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem 0;
+        }
+
+        .project {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .project h2 {
+            margin-top: 0;
+        }
+
+        .project-description {
+            margin: 1rem 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #222;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
+
 <body>
-	<h1>Welcome to my Website!</h1>
-	<ul>
-		<a href="HistoryoftheInternet.html"><li><strong>History of the Internet</strong></li></a>
-		<a href="PopularWebsites.html"><li><strong>Popular Websites</strong></li></a>
-		<a href="Other%20Passion%20Projects.html"><li><strong>Other Passion Projects</strong></li></a>
-		<a href="superPrograms.html"><li><strong>My Programs</strong></li><a>
-		<a href="Napier%27s%20Bones.html"><li><strong>Napier's Bones</strong></li></a>
-		<a href="Pascaline.html"><li><strong>The Pascaline</strong></li></a>
-		<a href="Work%20Journal.html"><li><strong>My Passion Project Work Journal</strong></li></a>
-	</ul>
-  <input type="email" placeholder="Your email">
-  <input type="submit">
-</body>
+
+<header>
+    <h1>Krish Dalela</h1>
+    <p>UT Student, I like to work with microcontrollers</p>
+</header>
+
+<div class="container">
+
+    <!-- PROJECT TEMPLATE (copy this block 6 times) -->
+    <div class="project">
+        <h2>Embedded iPod (Gagapod)</h2>
+
+        <div class="project-description">
+            <p>
+                I'm a big fan of Lady Gaga. For a class project I built a 5-DAC and an audio driver for the DAC, the extra credit was to encode a song to play on our embedded piano. 
+                I encoded the chorus of "Bad Romance", but it was still far from the real thing. Next, I expanded the DAC to 8-bit and tried using a Matlab script to convert an 8-bit PCM encoding into an array. I could do 2sec at 8kHz or 8sec at 32kHz before running out of space on the microcontroller.
+                Either way, this was still far from the real thing, so the next step was to use external storage. My professor had existing code to play audio from .bin files on an SD card, so I used that, changing the 11kHz 8-bit he had to 8-bit 44.1kHz, although I had to resolder a bad resistor on my SD board.
+                The next step was obviously to be able to play multiple songs. My professor's code only could read a specific file, so I used FatFS to list all files in the root SD directory so I could pick one.
+                The trouble of converting my WAV music files to .bin was a little inconvenient, so I made a simple WAV decoder to read the WAV header so I didn't need to convert the files anymore.
+                Around the same time, I was making a PCB for the microcontroller for another project (shown in "UTerraria"), so I switched to the internal 12-bit DAC, which I had designed an audio amp for on the PCB.
+                At the end, I had 97 Lady Gaga songs (all songs from the main 7 albums and a few others), along with "The Monster Mash" because my friends secretly put it on my SD as a prank.
+
+                The code is in my "MSPM0-Projects" repo, in the "iPod" folder.
+            </p>
+            <ul>
+                <li><strong>What I learned:</strong> Matlab, SPI, debugging with oscilloscope, FatFS</li>
+                <li><strong>Next Steps?</strong> Make active audio amp for bigger speakers (shown in "DC Power Supply") build dedicated PCB with just the M0 chip, SD, and speaker</li>
+            </ul>
+        </div>
+        
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/gaga.jpg" alt="Project image">
+            <div class="caption">I like Lady Gaga</div>
+          </div>
+          <div class="gallery-item">
+            <video controls width="100%" style="border-radius: 8px;">
+                <source src="videos/gagapod1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">Playing "Bad Romance" with notes</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/gaga_notes.png" alt="Project image">
+            <div class="caption">The notes for previous video</div>
+          </div>
+          <div class="gallery-item">
+            <video controls width="100%" style="border-radius: 8px;">
+                <source src="videos/gagapod2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">Playing "Bad Romance" with 8kHz audio stored in ROM as an array</div>
+          </div>
+            <div class="gallery-item">
+            <img src="images/gaga_array.png" alt="Project image">
+            <div class="caption">The array of 8-bit integers for the previous video</div>
+          </div>
+          <div class="gallery-item">
+            <video controls width="100%" style="border-radius: 8px;">
+                <source src="videos/gagapod3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">Testing running just one song from the SD</div>
+          </div>
+          <div class="gallery-item">
+            <video controls width="100%" style="border-radius: 8px;">
+                <source src="videos/gagapod3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">Selecting from either of the 3 songs stored on the SD card, in .bin format</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/gaga_directory.png" alt="Project image">
+            <div class="caption">Code for recognizing all songs on the SD card so they can be selected, uses FatFS</div>
+          </div>
+          <div class="gallery-item">
+            <video controls width="100%" style="border-radius: 8px;">
+                <source src="videos/gagapod5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">Most recent version, can play files in any integer WAV format</div>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- COPY ABOVE BLOCK FOR PROJECTS 2–6 -->
+    <!-- Just change titles, text, and image paths -->
+
+    <div class="project">
+      <h2>UTerraria</h2>
+      <div class="project-description">
+            <p>
+                Our final project for the aforementioned class was a video game meant to run on the Launchpad, an MSPM0-based development board.
+                First, I partnered with some other classmates to make a PCB that would make it easier to play our respective games. I wanted movement buttons, action buttons, a slide pot, and a menu button, so my schematic had those.
+                We all merged our designs to a single schematic and then designed and ordered the PCB. Once I had my PCB assembled, I started working on my idea, a Terraria knockoff. My first goal was to get terrain rendering, since the whole world modification part depends on a good terrain implementation.
+                I decided on having a single 8-bit integer represent every block in the terrain, and then define the behavior and texture for every number (sky is 0, dirt is 1, etc.). My first test clearly had work to do, but I could move around and modify blocks, pretty cool.
+                Next, I made it so that the rendering system always had the player at the center, which took a bit of trial and error to get the math right. Then, I added gravity and collisions, but since my framerate was pretty low, I had to implement clipping detection logic.
+                After that, I added mobs, which just follow the player and deal damage if their hitbox intersects the player's. I added multiple mobs, with varying hp and sprites.
+                I already had some understanding of SD interfacing from my iPod project, so I made some code to write and load terrain data from the SD card to save worlds.
+                Finally, I just did some polishing to make the game prettier and faster to run, to improve my chances of winning the game design competition.
+                Out of the 100+ projects that competed in our class video game design competition, I made the superfinals.
+
+                For more information, please refer <a href="">here</a>, I wrote a long technical explanation of what I did. I also have a <a href="">less wordy</a> technical presentation.
+
+                The code is in my "MSPM0-Projects" repo, in the "ECE319K_Lab9" folder.
+            </p>
+            <ul>
+                <li><strong>What I learned:</strong> FatFS, SPI, rendering, GPIO, Interrupts, Timers, ARM assembly, KiCad</li>
+                <li><strong>Next Steps?</strong> Everything is pretty good on the software side, main performance improvement will be using a better processor. Also the SD board is a bit buggy, I'm still trying to make it more consistent.</li>
+            </ul>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/lab9_schematic.png" alt="Project image">
+                <div class="caption">Our plans for the PCB</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/lab9_pcb.jpg" alt="Project image">
+                <div class="caption">Assembled PCB. The other guys' projects were a Bloons Tower Defense clone and a Battleship clone</div>
+            </div>
+
+            <div class="gallery-item">
+            <video controls width="100%" style="border-radius: 8px;">
+                <source src="videos/uterraria1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">First test, clearly very jank</div>
+          </div>
+          <div class="gallery-item">
+            <video controls width="100%" style="border-radius: 8px;">
+                <source src="videos/uterraria2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">Big overhaul to the rendering system, now more like actual Terraria</div>
+          </div>
+          <div class="gallery-item">
+            <video controls width="100%" style="border-radius: 8px;">
+                <source src="videos/uterraria3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">Final version, I used a Minecraft 8-bit texture pack to make the terrain prettier. The red text at the beginning is when the board doesn't fully discharge and the SD gets mad, I just stroke the pins to fix it</div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="project"><h2>AC-DC Power Converter</h2>
+    <div class="project-description">
+            <p>
+                This was a pretty quick project between my friend and I. I had bought some old speakers from Goodwill, and my embedded iPod was playing really quietly on them.
+                The main issue was that my microcontroller had a very low max power output, so we decided to make a power supply for the audio amp. My friend had an old transformer from a lamp, I got a power cable from a broken monitor, and then the rest of the components from the ECE checkout desk.
+                The idea is to use a full bridge rectifier to make a rectified wave, and then use some capacitors to smooth the wave into a constant voltage.
+                We ended up turning the 120Vrms wall electricity (170V peak-to-peak) into 14V DC (the transformer was probably a little less than 10:1). We then made an LDO circuit to step it down to 12V.
+                After prototyping it on a breadboard, we designed, ordered, and assembled a PCB that does active audio amplification. Now, my microcontroller plays music throughout our apartment. 
+                Our MC34119 audio amp is only supposed to take 500mW though, maybe we should get a bigger one.
+                
+                Big thanks to Clark Rucker ("scrublam" on GitHub) for the help with designing the PCB.
+            </p>
+            <ul>
+                <li><strong>What I learned:</strong> KiCad, power conversion, power electronics, LDO circuits</li>
+                <li><strong>Next Steps?</strong> Make a pretty case for the PCB, with RCA ports. Also use a bigger audio amp</li>
+            </ul>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/ac_dc_schematic.png" alt="Project image">
+                <div class="caption">Schematic Design</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/ac_dc_breadboard.jpg" alt="Project image">
+                <div class="caption">Breadboard prototype, we used alligator clips to connect it to the microcontroller and speakers</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/ac_dc_pcb.png" alt="Project image">
+                <div class="caption">PCB layout</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/ac_dc_cad.png" alt="Project image">
+                <div class="caption">My in-progress work on designing a case, I still need to do that</div>
+            </div>
+        </div>
+      </div>
+    <div class="project"><h2>Inverter (in progress)</h2>
+    <div class="project-description">
+            <p>
+                This is my latest project, as part of IEEE PES. I am making a 600W 12V DC -> 120V AC inverter to power our AC pumps and lights with our DC battery.
+                The plan is to use a microcontroller (powered by the battery via a LDO circuit to provide 3.3V) to generate a PWM sine wave, which I can feed into transistors to make a switching current.
+                Then, I use a low pass filter (ideal cutoff at 60Hz) to turn the PWM wave into a smooth sine wave.
+                So far, I've designed a schematic in KiCad and am testing to see if it works in theory in LTspice. I've managed to make a circuit to generate a PWM sine wave, but I'm still trying to test the low-pass filter properly.
+
+                This project isn't officially a PES project until next semester, so I'm doing this on my own right now. I don't have much power electronics experience, so please send me an email at krishdalela@utexas.edu if you want to help.
+            </p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/inverter_schematic.png" alt="Project image">
+                <div class="caption">Planned setup, I'm still testing the low-pass filter</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/invertertesto_schem.png" alt="Project image">
+                <div class="caption">My cool circuit to stand in for the microcontroller during simulation. Probably will use a lookup table for the real thing</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/invertertest0_high.png" alt="Project image">
+                <div class="caption">Basically 100% duty cycle at high</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/invertertesto_mid.png" alt="Project image">
+                <div class="caption">50% duty cycle at mid wave</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/invertertest0_low.png" alt="Project image">
+                <div class="caption">Close to 0% duty cycle at low</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/invertertest1.png" alt="Project image">
+                <div class="caption">Either my simulation or my filter is very wrong</div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<footer>
+    <p>Contact: krishdalela@utexas.edu | GitHub: github.com/RandomUser240306</p>
+</footer>
+
+</body>
+</html>
